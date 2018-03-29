@@ -32,8 +32,10 @@ public class Main {
         panel.add(new JLabel("How many album you've got :"));
         panel.add(albums);
         panel.setVisible(true);
-
-        if (JOptionPane.showConfirmDialog(null, panel, "ParticleSystem settings", JOptionPane.OK_CANCEL_OPTION) != JOptionPane.OK_OPTION) {
+        if (JOptionPane.showConfirmDialog(null,
+                panel,
+                "ParticleSystem settings",
+                JOptionPane.OK_CANCEL_OPTION) != JOptionPane.OK_OPTION) {
             return;
         }
         JFrame frame = new UI(Calculator.getRes((int)cards.getValue(),
@@ -43,7 +45,5 @@ public class Main {
                 (int)albums.getValue(),
                 (int) cards.getValue());
         frame.setVisible(true);
-
     }
-
 }
