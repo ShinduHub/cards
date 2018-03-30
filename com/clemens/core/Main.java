@@ -1,17 +1,27 @@
 package com.clemens.core;
 
+import com.clemens.ui.Loading;
 import com.clemens.ui.UI;
 
 import javax.swing.*;
 import java.awt.*;
+
+/**
+ * @author Clemens/Shindu
+ * @version 1.0
+ *
+ */
 
 public class Main {
 
     public static final int WIDTH = 1280;
     public static final int HEIGHT = 720;
 
-    public static void main(String[] args) {
+    /**
+     * The Main method the program starts here.
+     */
 
+    public static void main(String[] args) {
         JPanel panel = new JPanel();
         panel.setBounds(0, 0, WIDTH, HEIGHT);
         panel.setLayout(new GridLayout(4, 2));
@@ -38,12 +48,14 @@ public class Main {
                 JOptionPane.OK_CANCEL_OPTION) != JOptionPane.OK_OPTION) {
             return;
         }
-        JFrame frame = new UI(Calculator.getRes((int)cards.getValue(),
-                (int)cardsPerPacks.getValue(),
-                (int)times.getValue(),
-                (int)albums.getValue()),
-                (int)albums.getValue(),
-                (int) cards.getValue());
+        Loading loading = new Loading();
+        UI frame = new UI(Calculator.getRes((int) cards.getValue(),
+                (int) cardsPerPacks.getValue(),
+                (int) times.getValue(),
+                (int) albums.getValue()),
+                (int) albums.getValue(),
+                (int) cards.getValue(),
+                loading);
         frame.setVisible(true);
     }
 }

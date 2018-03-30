@@ -5,16 +5,25 @@ import com.clemens.core.Main;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * @author Clemens/Shindu
+ * @version 1.0
+ *
+ */
+
 public class UI extends JFrame {
 
-    public UI(double[][] input, int albums, int cards) throws HeadlessException {
+    /**
+     * this method initialises the user interface
+     */
+    public UI(double[][] input, int albums, int cards, Loading loading) throws HeadlessException {
 
         setTitle("Result");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setSize(Main.WIDTH, Main.HEIGHT);
         String[][] arr = new String[cards][albums + 1];
-        for(int i = 0; i < cards; i++) {
-            for(int j = 0; j < albums + 1; j++) {
+        for (int i = 0; i < cards; i++) {
+            for (int j = 0; j < albums + 1; j++) {
                 arr[i][j] = String.valueOf(j == 0 ? i + 1 : input[i][j - 1]);
             }
         }
@@ -26,6 +35,7 @@ public class UI extends JFrame {
         JTable table = new JTable(arr, attributes);
         add(new JScrollPane(table));
         pack();
+        loading.setStop(true);
 
     }
 
