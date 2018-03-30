@@ -23,7 +23,7 @@ public class Main {
 
     public static void main(String[] args) {
         JPanel panel = new JPanel();
-        panel.setBounds(0, 0, WIDTH, HEIGHT);
+        panel.setSize(WIDTH, HEIGHT);
         panel.setLayout(new GridLayout(4, 2));
         JSpinner cards = new JSpinner();
         cards.setValue(300);
