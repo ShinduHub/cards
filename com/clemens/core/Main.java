@@ -2,6 +2,7 @@ package com.clemens.core;
 
 import com.clemens.ui.Loading;
 import com.clemens.ui.UI;
+import com.clemens.version.Version;
 
 import javax.swing.*;
 import java.awt.*;
@@ -44,7 +45,7 @@ public class Main {
         panel.setVisible(true);
         if (JOptionPane.showConfirmDialog(null,
                 panel,
-                "ParticleSystem settings",
+                "Cards " + Version.version,
                 JOptionPane.OK_CANCEL_OPTION) != JOptionPane.OK_OPTION) {
             return;
         }
